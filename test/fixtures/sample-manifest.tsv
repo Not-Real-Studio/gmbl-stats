@@ -1,0 +1,927 @@
+# Манифест sample-slot 0.1.0, снятый со старого statRows (до миграции на gm-stats).
+# Формат: label<TAB>agg<TAB>of<TAB>per (пустое поле = null). Эталон состава и порядка строк.
+date	date		
+profile	text		
+mode	text		
+seed	text		
+config_hash	text		
+Rounds	sum		
+Spins (base+FG)	sum		
+Wagered (coins)	sum		
+Time, s	sum		
+Speed (rps)	speed		
+noise floor % (2×SEM)	noise		
+— A: RTP и разложение —	section		
+E[wager]/round (coins)	wavg		
+E[win]/round (coins)	wavg		
+E[win base]/round (coins)	wavg		
+E[win FG]/round (coins)	wavg		
+E[win wincap]/round (coins)	wavg		
+RTP % total	rtp	E[win]/round (coins)	
+RTP % base	rtp	E[win base]/round (coins)	
+RTP % FG	rtp	E[win FG]/round (coins)	
+RTP % wincap	rtp	E[win wincap]/round (coins)	
+E[hot]/round (coins)	wavg		
+E[hot base]/round (coins)	wavg		
+E[hot FG]/round (coins)	wavg		
+RTP % hot (total)	rtp	E[hot]/round (coins)	
+RTP % hot (base)	rtp	E[hot base]/round (coins)	
+RTP % hot (FG)	rtp	E[hot FG]/round (coins)	
+Mean win (x bet)	wavg		
+STD (per round, bets)	std	Mean win (x bet)	
+Win count	sum		
+Hit rate %	share	Win count	
+Max win (coins)	max		
+Max win (x bet)	max		
+Wincap hits	sum		
+Wincap 1/N (per round)	one_in	Wincap hits	Rounds
+Wincap 1/N (per spin)	one_in	Wincap hits	Spins (base+FG)
+Wincap % (per round)	share	Wincap hits	
+— C: триггеры и фича —	section		
+FG triggers	sum		
+FG trigger 6	sum		
+FG trigger 12	sum		
+FG trigger 1/N	one_in	FG triggers	Rounds
+FG trigger %	share	FG triggers	
+FG trigger 6 1/N	one_in	FG trigger 6	Rounds
+FG trigger 6 %	share	FG trigger 6	
+FG trigger 12 1/N	one_in	FG trigger 12	Rounds
+FG trigger 12 %	share	FG trigger 12	
+FG spins	sum		
+FG win spins	sum		
+FG spin hit rate %	pct	FG win spins	FG spins
+FG avg length (spins/trigger)	ratio	FG spins	FG triggers
+FG max steps	max		
+FG win (coins)	sum		
+FG win (x bet)	sum		
+FG avg win (coins/trigger)	ratio	FG win (coins)	FG triggers
+FG avg win (x bet/trigger)	ratio	FG win (x bet)	FG triggers
+FG dry coins	sum		
+FG lock coins	sum		
+E[FG dry]/round (coins)	wavg		
+E[FG lock]/round (coins)	wavg		
+RTP % FG dry	rtp	E[FG dry]/round (coins)	
+RTP % FG lock	rtp	E[FG lock]/round (coins)	
+Gate fires (fg-gate)	sum		
+Gate fire % (of FG spins)	pct	Gate fires (fg-gate)	FG spins
+Game Over (wincap) count	sum		
+dry 6g #1 spins	sum		
+dry 6g #1 wins	sum		
+dry 6g #1 hit %	pct	dry 6g #1 wins	dry 6g #1 spins
+dry 6g #2 spins	sum		
+dry 6g #2 wins	sum		
+dry 6g #2 hit %	pct	dry 6g #2 wins	dry 6g #2 spins
+dry 6g #3 spins	sum		
+dry 6g #3 wins	sum		
+dry 6g #3 hit %	pct	dry 6g #3 wins	dry 6g #3 spins
+dry 6g #4 spins	sum		
+dry 6g #4 wins	sum		
+dry 6g #4 hit %	pct	dry 6g #4 wins	dry 6g #4 spins
+dry 6g #5 spins	sum		
+dry 6g #5 wins	sum		
+dry 6g #5 hit %	pct	dry 6g #5 wins	dry 6g #5 spins
+dry 6g #6 spins	sum		
+dry 6g #6 wins	sum		
+dry 6g #6 hit %	pct	dry 6g #6 wins	dry 6g #6 spins
+dry 12g #1 spins	sum		
+dry 12g #1 wins	sum		
+dry 12g #1 hit %	pct	dry 12g #1 wins	dry 12g #1 spins
+dry 12g #2 spins	sum		
+dry 12g #2 wins	sum		
+dry 12g #2 hit %	pct	dry 12g #2 wins	dry 12g #2 spins
+dry 12g #3 spins	sum		
+dry 12g #3 wins	sum		
+dry 12g #3 hit %	pct	dry 12g #3 wins	dry 12g #3 spins
+dry 12g #4 spins	sum		
+dry 12g #4 wins	sum		
+dry 12g #4 hit %	pct	dry 12g #4 wins	dry 12g #4 spins
+dry 12g #5 spins	sum		
+dry 12g #5 wins	sum		
+dry 12g #5 hit %	pct	dry 12g #5 wins	dry 12g #5 spins
+dry 12g #6 spins	sum		
+dry 12g #6 wins	sum		
+dry 12g #6 hit %	pct	dry 12g #6 wins	dry 12g #6 spins
+dry 12g #7 spins	sum		
+dry 12g #7 wins	sum		
+dry 12g #7 hit %	pct	dry 12g #7 wins	dry 12g #7 spins
+dry 12g #8 spins	sum		
+dry 12g #8 wins	sum		
+dry 12g #8 hit %	pct	dry 12g #8 wins	dry 12g #8 spins
+dry 12g #9 spins	sum		
+dry 12g #9 wins	sum		
+dry 12g #9 hit %	pct	dry 12g #9 wins	dry 12g #9 spins
+dry 12g #10 spins	sum		
+dry 12g #10 wins	sum		
+dry 12g #10 hit %	pct	dry 12g #10 wins	dry 12g #10 spins
+dry 12g #11 spins	sum		
+dry 12g #11 wins	sum		
+dry 12g #11 hit %	pct	dry 12g #11 wins	dry 12g #11 spins
+dry 12g #12 spins	sum		
+dry 12g #12 wins	sum		
+dry 12g #12 hit %	pct	dry 12g #12 wins	dry 12g #12 spins
+Anticipation % (artificial)	share	base family empty-ant count	
+— B: семейства (факт vs веса) —	section		
+base family low count	sum		
+base family low %	share	base family low count	
+base family low weight %	wavg		
+base family high count	sum		
+base family high %	share	base family high count	
+base family high weight %	wavg		
+base family empty count	sum		
+base family empty %	share	base family empty count	
+base family empty weight %	wavg		
+base family empty-ant count	sum		
+base family empty-ant %	share	base family empty-ant count	
+base family empty-ant weight %	wavg		
+base family empty-bonus count	sum		
+base family empty-bonus %	share	base family empty-bonus count	
+base family empty-bonus weight %	wavg		
+base family wincap count	sum		
+base family wincap %	share	base family wincap count	
+fg family fg-low count	sum		
+fg family fg-low % (of FG spins)	pct	fg family fg-low count	FG spins
+fg family fg-low weight %	wavg		
+fg family fg-high count	sum		
+fg family fg-high % (of FG spins)	pct	fg family fg-high count	FG spins
+fg family fg-high weight %	wavg		
+fg family fg-empty count	sum		
+fg family fg-empty % (of FG spins)	pct	fg family fg-empty count	FG spins
+fg family fg-empty weight %	wavg		
+fg family fg-gate count	sum		
+fg family fg-gate % (of FG spins)	pct	fg family fg-gate count	FG spins
+fg family fg-gate weight %	wavg		
+— B: гистограмма выигрышей —	section		
+hist Total · N	section		
+hist Total 0x N	sum		
+hist Total (0,1)x N	sum		
+hist Total [1,2)x N	sum		
+hist Total [2,5)x N	sum		
+hist Total [5,10)x N	sum		
+hist Total [10,20)x N	sum		
+hist Total [20,50)x N	sum		
+hist Total [50,75)x N	sum		
+hist Total [75,100)x N	sum		
+hist Total [100,125)x N	sum		
+hist Total [125,150)x N	sum		
+hist Total [150,200)x N	sum		
+hist Total [200,250)x N	sum		
+hist Total [250,300)x N	sum		
+hist Total [300,400)x N	sum		
+hist Total [400,500)x N	sum		
+hist Total [500,600)x N	sum		
+hist Total [600,700)x N	sum		
+hist Total [700,800)x N	sum		
+hist Total [800,1000)x N	sum		
+hist Total [1000,1500)x N	sum		
+hist Total [1500,2000)x N	sum		
+hist Total [2000,+)x N	sum		
+hist Total · coins	section		
+hist Total 0x coins	sum		
+hist Total (0,1)x coins	sum		
+hist Total [1,2)x coins	sum		
+hist Total [2,5)x coins	sum		
+hist Total [5,10)x coins	sum		
+hist Total [10,20)x coins	sum		
+hist Total [20,50)x coins	sum		
+hist Total [50,75)x coins	sum		
+hist Total [75,100)x coins	sum		
+hist Total [100,125)x coins	sum		
+hist Total [125,150)x coins	sum		
+hist Total [150,200)x coins	sum		
+hist Total [200,250)x coins	sum		
+hist Total [250,300)x coins	sum		
+hist Total [300,400)x coins	sum		
+hist Total [400,500)x coins	sum		
+hist Total [500,600)x coins	sum		
+hist Total [600,700)x coins	sum		
+hist Total [700,800)x coins	sum		
+hist Total [800,1000)x coins	sum		
+hist Total [1000,1500)x coins	sum		
+hist Total [1500,2000)x coins	sum		
+hist Total [2000,+)x coins	sum		
+hist Total · %RTP	section		
+hist Total 0x %RTP	pct	hist Total 0x coins	Wagered (coins)
+hist Total (0,1)x %RTP	pct	hist Total (0,1)x coins	Wagered (coins)
+hist Total [1,2)x %RTP	pct	hist Total [1,2)x coins	Wagered (coins)
+hist Total [2,5)x %RTP	pct	hist Total [2,5)x coins	Wagered (coins)
+hist Total [5,10)x %RTP	pct	hist Total [5,10)x coins	Wagered (coins)
+hist Total [10,20)x %RTP	pct	hist Total [10,20)x coins	Wagered (coins)
+hist Total [20,50)x %RTP	pct	hist Total [20,50)x coins	Wagered (coins)
+hist Total [50,75)x %RTP	pct	hist Total [50,75)x coins	Wagered (coins)
+hist Total [75,100)x %RTP	pct	hist Total [75,100)x coins	Wagered (coins)
+hist Total [100,125)x %RTP	pct	hist Total [100,125)x coins	Wagered (coins)
+hist Total [125,150)x %RTP	pct	hist Total [125,150)x coins	Wagered (coins)
+hist Total [150,200)x %RTP	pct	hist Total [150,200)x coins	Wagered (coins)
+hist Total [200,250)x %RTP	pct	hist Total [200,250)x coins	Wagered (coins)
+hist Total [250,300)x %RTP	pct	hist Total [250,300)x coins	Wagered (coins)
+hist Total [300,400)x %RTP	pct	hist Total [300,400)x coins	Wagered (coins)
+hist Total [400,500)x %RTP	pct	hist Total [400,500)x coins	Wagered (coins)
+hist Total [500,600)x %RTP	pct	hist Total [500,600)x coins	Wagered (coins)
+hist Total [600,700)x %RTP	pct	hist Total [600,700)x coins	Wagered (coins)
+hist Total [700,800)x %RTP	pct	hist Total [700,800)x coins	Wagered (coins)
+hist Total [800,1000)x %RTP	pct	hist Total [800,1000)x coins	Wagered (coins)
+hist Total [1000,1500)x %RTP	pct	hist Total [1000,1500)x coins	Wagered (coins)
+hist Total [1500,2000)x %RTP	pct	hist Total [1500,2000)x coins	Wagered (coins)
+hist Total [2000,+)x %RTP	pct	hist Total [2000,+)x coins	Wagered (coins)
+hist BASE · N	section		
+hist BASE 0x N	sum		
+hist BASE (0,1)x N	sum		
+hist BASE [1,2)x N	sum		
+hist BASE [2,5)x N	sum		
+hist BASE [5,10)x N	sum		
+hist BASE [10,20)x N	sum		
+hist BASE [20,50)x N	sum		
+hist BASE [50,75)x N	sum		
+hist BASE [75,100)x N	sum		
+hist BASE [100,125)x N	sum		
+hist BASE [125,150)x N	sum		
+hist BASE [150,200)x N	sum		
+hist BASE [200,250)x N	sum		
+hist BASE [250,300)x N	sum		
+hist BASE [300,400)x N	sum		
+hist BASE [400,500)x N	sum		
+hist BASE [500,600)x N	sum		
+hist BASE [600,700)x N	sum		
+hist BASE [700,800)x N	sum		
+hist BASE [800,1000)x N	sum		
+hist BASE [1000,1500)x N	sum		
+hist BASE [1500,2000)x N	sum		
+hist BASE [2000,+)x N	sum		
+hist BASE · coins	section		
+hist BASE 0x coins	sum		
+hist BASE (0,1)x coins	sum		
+hist BASE [1,2)x coins	sum		
+hist BASE [2,5)x coins	sum		
+hist BASE [5,10)x coins	sum		
+hist BASE [10,20)x coins	sum		
+hist BASE [20,50)x coins	sum		
+hist BASE [50,75)x coins	sum		
+hist BASE [75,100)x coins	sum		
+hist BASE [100,125)x coins	sum		
+hist BASE [125,150)x coins	sum		
+hist BASE [150,200)x coins	sum		
+hist BASE [200,250)x coins	sum		
+hist BASE [250,300)x coins	sum		
+hist BASE [300,400)x coins	sum		
+hist BASE [400,500)x coins	sum		
+hist BASE [500,600)x coins	sum		
+hist BASE [600,700)x coins	sum		
+hist BASE [700,800)x coins	sum		
+hist BASE [800,1000)x coins	sum		
+hist BASE [1000,1500)x coins	sum		
+hist BASE [1500,2000)x coins	sum		
+hist BASE [2000,+)x coins	sum		
+hist BASE · %RTP	section		
+hist BASE 0x %RTP	pct	hist BASE 0x coins	Wagered (coins)
+hist BASE (0,1)x %RTP	pct	hist BASE (0,1)x coins	Wagered (coins)
+hist BASE [1,2)x %RTP	pct	hist BASE [1,2)x coins	Wagered (coins)
+hist BASE [2,5)x %RTP	pct	hist BASE [2,5)x coins	Wagered (coins)
+hist BASE [5,10)x %RTP	pct	hist BASE [5,10)x coins	Wagered (coins)
+hist BASE [10,20)x %RTP	pct	hist BASE [10,20)x coins	Wagered (coins)
+hist BASE [20,50)x %RTP	pct	hist BASE [20,50)x coins	Wagered (coins)
+hist BASE [50,75)x %RTP	pct	hist BASE [50,75)x coins	Wagered (coins)
+hist BASE [75,100)x %RTP	pct	hist BASE [75,100)x coins	Wagered (coins)
+hist BASE [100,125)x %RTP	pct	hist BASE [100,125)x coins	Wagered (coins)
+hist BASE [125,150)x %RTP	pct	hist BASE [125,150)x coins	Wagered (coins)
+hist BASE [150,200)x %RTP	pct	hist BASE [150,200)x coins	Wagered (coins)
+hist BASE [200,250)x %RTP	pct	hist BASE [200,250)x coins	Wagered (coins)
+hist BASE [250,300)x %RTP	pct	hist BASE [250,300)x coins	Wagered (coins)
+hist BASE [300,400)x %RTP	pct	hist BASE [300,400)x coins	Wagered (coins)
+hist BASE [400,500)x %RTP	pct	hist BASE [400,500)x coins	Wagered (coins)
+hist BASE [500,600)x %RTP	pct	hist BASE [500,600)x coins	Wagered (coins)
+hist BASE [600,700)x %RTP	pct	hist BASE [600,700)x coins	Wagered (coins)
+hist BASE [700,800)x %RTP	pct	hist BASE [700,800)x coins	Wagered (coins)
+hist BASE [800,1000)x %RTP	pct	hist BASE [800,1000)x coins	Wagered (coins)
+hist BASE [1000,1500)x %RTP	pct	hist BASE [1000,1500)x coins	Wagered (coins)
+hist BASE [1500,2000)x %RTP	pct	hist BASE [1500,2000)x coins	Wagered (coins)
+hist BASE [2000,+)x %RTP	pct	hist BASE [2000,+)x coins	Wagered (coins)
+hist FG · N	section		
+hist FG 0x N	sum		
+hist FG (0,1)x N	sum		
+hist FG [1,2)x N	sum		
+hist FG [2,5)x N	sum		
+hist FG [5,10)x N	sum		
+hist FG [10,20)x N	sum		
+hist FG [20,50)x N	sum		
+hist FG [50,75)x N	sum		
+hist FG [75,100)x N	sum		
+hist FG [100,125)x N	sum		
+hist FG [125,150)x N	sum		
+hist FG [150,200)x N	sum		
+hist FG [200,250)x N	sum		
+hist FG [250,300)x N	sum		
+hist FG [300,400)x N	sum		
+hist FG [400,500)x N	sum		
+hist FG [500,600)x N	sum		
+hist FG [600,700)x N	sum		
+hist FG [700,800)x N	sum		
+hist FG [800,1000)x N	sum		
+hist FG [1000,1500)x N	sum		
+hist FG [1500,2000)x N	sum		
+hist FG [2000,+)x N	sum		
+hist FG · coins	section		
+hist FG 0x coins	sum		
+hist FG (0,1)x coins	sum		
+hist FG [1,2)x coins	sum		
+hist FG [2,5)x coins	sum		
+hist FG [5,10)x coins	sum		
+hist FG [10,20)x coins	sum		
+hist FG [20,50)x coins	sum		
+hist FG [50,75)x coins	sum		
+hist FG [75,100)x coins	sum		
+hist FG [100,125)x coins	sum		
+hist FG [125,150)x coins	sum		
+hist FG [150,200)x coins	sum		
+hist FG [200,250)x coins	sum		
+hist FG [250,300)x coins	sum		
+hist FG [300,400)x coins	sum		
+hist FG [400,500)x coins	sum		
+hist FG [500,600)x coins	sum		
+hist FG [600,700)x coins	sum		
+hist FG [700,800)x coins	sum		
+hist FG [800,1000)x coins	sum		
+hist FG [1000,1500)x coins	sum		
+hist FG [1500,2000)x coins	sum		
+hist FG [2000,+)x coins	sum		
+hist FG · %RTP	section		
+hist FG 0x %RTP	pct	hist FG 0x coins	Wagered (coins)
+hist FG (0,1)x %RTP	pct	hist FG (0,1)x coins	Wagered (coins)
+hist FG [1,2)x %RTP	pct	hist FG [1,2)x coins	Wagered (coins)
+hist FG [2,5)x %RTP	pct	hist FG [2,5)x coins	Wagered (coins)
+hist FG [5,10)x %RTP	pct	hist FG [5,10)x coins	Wagered (coins)
+hist FG [10,20)x %RTP	pct	hist FG [10,20)x coins	Wagered (coins)
+hist FG [20,50)x %RTP	pct	hist FG [20,50)x coins	Wagered (coins)
+hist FG [50,75)x %RTP	pct	hist FG [50,75)x coins	Wagered (coins)
+hist FG [75,100)x %RTP	pct	hist FG [75,100)x coins	Wagered (coins)
+hist FG [100,125)x %RTP	pct	hist FG [100,125)x coins	Wagered (coins)
+hist FG [125,150)x %RTP	pct	hist FG [125,150)x coins	Wagered (coins)
+hist FG [150,200)x %RTP	pct	hist FG [150,200)x coins	Wagered (coins)
+hist FG [200,250)x %RTP	pct	hist FG [200,250)x coins	Wagered (coins)
+hist FG [250,300)x %RTP	pct	hist FG [250,300)x coins	Wagered (coins)
+hist FG [300,400)x %RTP	pct	hist FG [300,400)x coins	Wagered (coins)
+hist FG [400,500)x %RTP	pct	hist FG [400,500)x coins	Wagered (coins)
+hist FG [500,600)x %RTP	pct	hist FG [500,600)x coins	Wagered (coins)
+hist FG [600,700)x %RTP	pct	hist FG [600,700)x coins	Wagered (coins)
+hist FG [700,800)x %RTP	pct	hist FG [700,800)x coins	Wagered (coins)
+hist FG [800,1000)x %RTP	pct	hist FG [800,1000)x coins	Wagered (coins)
+hist FG [1000,1500)x %RTP	pct	hist FG [1000,1500)x coins	Wagered (coins)
+hist FG [1500,2000)x %RTP	pct	hist FG [1500,2000)x coins	Wagered (coins)
+hist FG [2000,+)x %RTP	pct	hist FG [2000,+)x coins	Wagered (coins)
+— B: fine grid (шаг 50x) —	section		
+fine Total · N	section		
+fine Total 0-50 N	sum		
+fine Total 50-100 N	sum		
+fine Total 100-150 N	sum		
+fine Total 150-200 N	sum		
+fine Total 200-250 N	sum		
+fine Total 250-300 N	sum		
+fine Total 300-350 N	sum		
+fine Total 350-400 N	sum		
+fine Total 400-450 N	sum		
+fine Total 450-500 N	sum		
+fine Total 500-550 N	sum		
+fine Total 550-600 N	sum		
+fine Total 600-650 N	sum		
+fine Total 650-700 N	sum		
+fine Total 700-750 N	sum		
+fine Total 750-800 N	sum		
+fine Total 800-850 N	sum		
+fine Total 850-900 N	sum		
+fine Total 900-950 N	sum		
+fine Total 950-1000 N	sum		
+fine Total 1000-1050 N	sum		
+fine Total 1050-1100 N	sum		
+fine Total 1100-1150 N	sum		
+fine Total 1150-1200 N	sum		
+fine Total 1200-1250 N	sum		
+fine Total 1250-1300 N	sum		
+fine Total 1300-1350 N	sum		
+fine Total 1350-1400 N	sum		
+fine Total 1400-1450 N	sum		
+fine Total 1450-1500 N	sum		
+fine Total 1500-1550 N	sum		
+fine Total 1550-1600 N	sum		
+fine Total 1600-1650 N	sum		
+fine Total 1650-1700 N	sum		
+fine Total 1700-1750 N	sum		
+fine Total 1750-1800 N	sum		
+fine Total 1800-1850 N	sum		
+fine Total 1850-1900 N	sum		
+fine Total 1900-1950 N	sum		
+fine Total 1950-2000 N	sum		
+fine Total 2000-2050 N	sum		
+fine Total 2050-2100 N	sum		
+fine Total 2100-2150 N	sum		
+fine Total 2150-2200 N	sum		
+fine Total 2200-2250 N	sum		
+fine Total 2250-2300 N	sum		
+fine Total 2300-2350 N	sum		
+fine Total 2350-2400 N	sum		
+fine Total 2400-2450 N	sum		
+fine Total 2450-2500 N	sum		
+fine Total 2500-2550 N	sum		
+fine Total 2550-2600 N	sum		
+fine Total 2600-2650 N	sum		
+fine Total 2650-2700 N	sum		
+fine Total 2700-2750 N	sum		
+fine Total 2750-2800 N	sum		
+fine Total 2800-2850 N	sum		
+fine Total 2850-2900 N	sum		
+fine Total 2900-2950 N	sum		
+fine Total 2950-3000 N	sum		
+fine Total 3000+ N	sum		
+fine Total · coins	section		
+fine Total 0-50 coins	sum		
+fine Total 50-100 coins	sum		
+fine Total 100-150 coins	sum		
+fine Total 150-200 coins	sum		
+fine Total 200-250 coins	sum		
+fine Total 250-300 coins	sum		
+fine Total 300-350 coins	sum		
+fine Total 350-400 coins	sum		
+fine Total 400-450 coins	sum		
+fine Total 450-500 coins	sum		
+fine Total 500-550 coins	sum		
+fine Total 550-600 coins	sum		
+fine Total 600-650 coins	sum		
+fine Total 650-700 coins	sum		
+fine Total 700-750 coins	sum		
+fine Total 750-800 coins	sum		
+fine Total 800-850 coins	sum		
+fine Total 850-900 coins	sum		
+fine Total 900-950 coins	sum		
+fine Total 950-1000 coins	sum		
+fine Total 1000-1050 coins	sum		
+fine Total 1050-1100 coins	sum		
+fine Total 1100-1150 coins	sum		
+fine Total 1150-1200 coins	sum		
+fine Total 1200-1250 coins	sum		
+fine Total 1250-1300 coins	sum		
+fine Total 1300-1350 coins	sum		
+fine Total 1350-1400 coins	sum		
+fine Total 1400-1450 coins	sum		
+fine Total 1450-1500 coins	sum		
+fine Total 1500-1550 coins	sum		
+fine Total 1550-1600 coins	sum		
+fine Total 1600-1650 coins	sum		
+fine Total 1650-1700 coins	sum		
+fine Total 1700-1750 coins	sum		
+fine Total 1750-1800 coins	sum		
+fine Total 1800-1850 coins	sum		
+fine Total 1850-1900 coins	sum		
+fine Total 1900-1950 coins	sum		
+fine Total 1950-2000 coins	sum		
+fine Total 2000-2050 coins	sum		
+fine Total 2050-2100 coins	sum		
+fine Total 2100-2150 coins	sum		
+fine Total 2150-2200 coins	sum		
+fine Total 2200-2250 coins	sum		
+fine Total 2250-2300 coins	sum		
+fine Total 2300-2350 coins	sum		
+fine Total 2350-2400 coins	sum		
+fine Total 2400-2450 coins	sum		
+fine Total 2450-2500 coins	sum		
+fine Total 2500-2550 coins	sum		
+fine Total 2550-2600 coins	sum		
+fine Total 2600-2650 coins	sum		
+fine Total 2650-2700 coins	sum		
+fine Total 2700-2750 coins	sum		
+fine Total 2750-2800 coins	sum		
+fine Total 2800-2850 coins	sum		
+fine Total 2850-2900 coins	sum		
+fine Total 2900-2950 coins	sum		
+fine Total 2950-3000 coins	sum		
+fine Total 3000+ coins	sum		
+fine Total · %RTP	section		
+fine Total 0-50 %RTP	pct	fine Total 0-50 coins	Wagered (coins)
+fine Total 50-100 %RTP	pct	fine Total 50-100 coins	Wagered (coins)
+fine Total 100-150 %RTP	pct	fine Total 100-150 coins	Wagered (coins)
+fine Total 150-200 %RTP	pct	fine Total 150-200 coins	Wagered (coins)
+fine Total 200-250 %RTP	pct	fine Total 200-250 coins	Wagered (coins)
+fine Total 250-300 %RTP	pct	fine Total 250-300 coins	Wagered (coins)
+fine Total 300-350 %RTP	pct	fine Total 300-350 coins	Wagered (coins)
+fine Total 350-400 %RTP	pct	fine Total 350-400 coins	Wagered (coins)
+fine Total 400-450 %RTP	pct	fine Total 400-450 coins	Wagered (coins)
+fine Total 450-500 %RTP	pct	fine Total 450-500 coins	Wagered (coins)
+fine Total 500-550 %RTP	pct	fine Total 500-550 coins	Wagered (coins)
+fine Total 550-600 %RTP	pct	fine Total 550-600 coins	Wagered (coins)
+fine Total 600-650 %RTP	pct	fine Total 600-650 coins	Wagered (coins)
+fine Total 650-700 %RTP	pct	fine Total 650-700 coins	Wagered (coins)
+fine Total 700-750 %RTP	pct	fine Total 700-750 coins	Wagered (coins)
+fine Total 750-800 %RTP	pct	fine Total 750-800 coins	Wagered (coins)
+fine Total 800-850 %RTP	pct	fine Total 800-850 coins	Wagered (coins)
+fine Total 850-900 %RTP	pct	fine Total 850-900 coins	Wagered (coins)
+fine Total 900-950 %RTP	pct	fine Total 900-950 coins	Wagered (coins)
+fine Total 950-1000 %RTP	pct	fine Total 950-1000 coins	Wagered (coins)
+fine Total 1000-1050 %RTP	pct	fine Total 1000-1050 coins	Wagered (coins)
+fine Total 1050-1100 %RTP	pct	fine Total 1050-1100 coins	Wagered (coins)
+fine Total 1100-1150 %RTP	pct	fine Total 1100-1150 coins	Wagered (coins)
+fine Total 1150-1200 %RTP	pct	fine Total 1150-1200 coins	Wagered (coins)
+fine Total 1200-1250 %RTP	pct	fine Total 1200-1250 coins	Wagered (coins)
+fine Total 1250-1300 %RTP	pct	fine Total 1250-1300 coins	Wagered (coins)
+fine Total 1300-1350 %RTP	pct	fine Total 1300-1350 coins	Wagered (coins)
+fine Total 1350-1400 %RTP	pct	fine Total 1350-1400 coins	Wagered (coins)
+fine Total 1400-1450 %RTP	pct	fine Total 1400-1450 coins	Wagered (coins)
+fine Total 1450-1500 %RTP	pct	fine Total 1450-1500 coins	Wagered (coins)
+fine Total 1500-1550 %RTP	pct	fine Total 1500-1550 coins	Wagered (coins)
+fine Total 1550-1600 %RTP	pct	fine Total 1550-1600 coins	Wagered (coins)
+fine Total 1600-1650 %RTP	pct	fine Total 1600-1650 coins	Wagered (coins)
+fine Total 1650-1700 %RTP	pct	fine Total 1650-1700 coins	Wagered (coins)
+fine Total 1700-1750 %RTP	pct	fine Total 1700-1750 coins	Wagered (coins)
+fine Total 1750-1800 %RTP	pct	fine Total 1750-1800 coins	Wagered (coins)
+fine Total 1800-1850 %RTP	pct	fine Total 1800-1850 coins	Wagered (coins)
+fine Total 1850-1900 %RTP	pct	fine Total 1850-1900 coins	Wagered (coins)
+fine Total 1900-1950 %RTP	pct	fine Total 1900-1950 coins	Wagered (coins)
+fine Total 1950-2000 %RTP	pct	fine Total 1950-2000 coins	Wagered (coins)
+fine Total 2000-2050 %RTP	pct	fine Total 2000-2050 coins	Wagered (coins)
+fine Total 2050-2100 %RTP	pct	fine Total 2050-2100 coins	Wagered (coins)
+fine Total 2100-2150 %RTP	pct	fine Total 2100-2150 coins	Wagered (coins)
+fine Total 2150-2200 %RTP	pct	fine Total 2150-2200 coins	Wagered (coins)
+fine Total 2200-2250 %RTP	pct	fine Total 2200-2250 coins	Wagered (coins)
+fine Total 2250-2300 %RTP	pct	fine Total 2250-2300 coins	Wagered (coins)
+fine Total 2300-2350 %RTP	pct	fine Total 2300-2350 coins	Wagered (coins)
+fine Total 2350-2400 %RTP	pct	fine Total 2350-2400 coins	Wagered (coins)
+fine Total 2400-2450 %RTP	pct	fine Total 2400-2450 coins	Wagered (coins)
+fine Total 2450-2500 %RTP	pct	fine Total 2450-2500 coins	Wagered (coins)
+fine Total 2500-2550 %RTP	pct	fine Total 2500-2550 coins	Wagered (coins)
+fine Total 2550-2600 %RTP	pct	fine Total 2550-2600 coins	Wagered (coins)
+fine Total 2600-2650 %RTP	pct	fine Total 2600-2650 coins	Wagered (coins)
+fine Total 2650-2700 %RTP	pct	fine Total 2650-2700 coins	Wagered (coins)
+fine Total 2700-2750 %RTP	pct	fine Total 2700-2750 coins	Wagered (coins)
+fine Total 2750-2800 %RTP	pct	fine Total 2750-2800 coins	Wagered (coins)
+fine Total 2800-2850 %RTP	pct	fine Total 2800-2850 coins	Wagered (coins)
+fine Total 2850-2900 %RTP	pct	fine Total 2850-2900 coins	Wagered (coins)
+fine Total 2900-2950 %RTP	pct	fine Total 2900-2950 coins	Wagered (coins)
+fine Total 2950-3000 %RTP	pct	fine Total 2950-3000 coins	Wagered (coins)
+fine Total 3000+ %RTP	pct	fine Total 3000+ coins	Wagered (coins)
+fine FG · N	section		
+fine FG 0-50 N	sum		
+fine FG 50-100 N	sum		
+fine FG 100-150 N	sum		
+fine FG 150-200 N	sum		
+fine FG 200-250 N	sum		
+fine FG 250-300 N	sum		
+fine FG 300-350 N	sum		
+fine FG 350-400 N	sum		
+fine FG 400-450 N	sum		
+fine FG 450-500 N	sum		
+fine FG 500-550 N	sum		
+fine FG 550-600 N	sum		
+fine FG 600-650 N	sum		
+fine FG 650-700 N	sum		
+fine FG 700-750 N	sum		
+fine FG 750-800 N	sum		
+fine FG 800-850 N	sum		
+fine FG 850-900 N	sum		
+fine FG 900-950 N	sum		
+fine FG 950-1000 N	sum		
+fine FG 1000-1050 N	sum		
+fine FG 1050-1100 N	sum		
+fine FG 1100-1150 N	sum		
+fine FG 1150-1200 N	sum		
+fine FG 1200-1250 N	sum		
+fine FG 1250-1300 N	sum		
+fine FG 1300-1350 N	sum		
+fine FG 1350-1400 N	sum		
+fine FG 1400-1450 N	sum		
+fine FG 1450-1500 N	sum		
+fine FG 1500-1550 N	sum		
+fine FG 1550-1600 N	sum		
+fine FG 1600-1650 N	sum		
+fine FG 1650-1700 N	sum		
+fine FG 1700-1750 N	sum		
+fine FG 1750-1800 N	sum		
+fine FG 1800-1850 N	sum		
+fine FG 1850-1900 N	sum		
+fine FG 1900-1950 N	sum		
+fine FG 1950-2000 N	sum		
+fine FG 2000-2050 N	sum		
+fine FG 2050-2100 N	sum		
+fine FG 2100-2150 N	sum		
+fine FG 2150-2200 N	sum		
+fine FG 2200-2250 N	sum		
+fine FG 2250-2300 N	sum		
+fine FG 2300-2350 N	sum		
+fine FG 2350-2400 N	sum		
+fine FG 2400-2450 N	sum		
+fine FG 2450-2500 N	sum		
+fine FG 2500-2550 N	sum		
+fine FG 2550-2600 N	sum		
+fine FG 2600-2650 N	sum		
+fine FG 2650-2700 N	sum		
+fine FG 2700-2750 N	sum		
+fine FG 2750-2800 N	sum		
+fine FG 2800-2850 N	sum		
+fine FG 2850-2900 N	sum		
+fine FG 2900-2950 N	sum		
+fine FG 2950-3000 N	sum		
+fine FG 3000+ N	sum		
+fine FG · coins	section		
+fine FG 0-50 coins	sum		
+fine FG 50-100 coins	sum		
+fine FG 100-150 coins	sum		
+fine FG 150-200 coins	sum		
+fine FG 200-250 coins	sum		
+fine FG 250-300 coins	sum		
+fine FG 300-350 coins	sum		
+fine FG 350-400 coins	sum		
+fine FG 400-450 coins	sum		
+fine FG 450-500 coins	sum		
+fine FG 500-550 coins	sum		
+fine FG 550-600 coins	sum		
+fine FG 600-650 coins	sum		
+fine FG 650-700 coins	sum		
+fine FG 700-750 coins	sum		
+fine FG 750-800 coins	sum		
+fine FG 800-850 coins	sum		
+fine FG 850-900 coins	sum		
+fine FG 900-950 coins	sum		
+fine FG 950-1000 coins	sum		
+fine FG 1000-1050 coins	sum		
+fine FG 1050-1100 coins	sum		
+fine FG 1100-1150 coins	sum		
+fine FG 1150-1200 coins	sum		
+fine FG 1200-1250 coins	sum		
+fine FG 1250-1300 coins	sum		
+fine FG 1300-1350 coins	sum		
+fine FG 1350-1400 coins	sum		
+fine FG 1400-1450 coins	sum		
+fine FG 1450-1500 coins	sum		
+fine FG 1500-1550 coins	sum		
+fine FG 1550-1600 coins	sum		
+fine FG 1600-1650 coins	sum		
+fine FG 1650-1700 coins	sum		
+fine FG 1700-1750 coins	sum		
+fine FG 1750-1800 coins	sum		
+fine FG 1800-1850 coins	sum		
+fine FG 1850-1900 coins	sum		
+fine FG 1900-1950 coins	sum		
+fine FG 1950-2000 coins	sum		
+fine FG 2000-2050 coins	sum		
+fine FG 2050-2100 coins	sum		
+fine FG 2100-2150 coins	sum		
+fine FG 2150-2200 coins	sum		
+fine FG 2200-2250 coins	sum		
+fine FG 2250-2300 coins	sum		
+fine FG 2300-2350 coins	sum		
+fine FG 2350-2400 coins	sum		
+fine FG 2400-2450 coins	sum		
+fine FG 2450-2500 coins	sum		
+fine FG 2500-2550 coins	sum		
+fine FG 2550-2600 coins	sum		
+fine FG 2600-2650 coins	sum		
+fine FG 2650-2700 coins	sum		
+fine FG 2700-2750 coins	sum		
+fine FG 2750-2800 coins	sum		
+fine FG 2800-2850 coins	sum		
+fine FG 2850-2900 coins	sum		
+fine FG 2900-2950 coins	sum		
+fine FG 2950-3000 coins	sum		
+fine FG 3000+ coins	sum		
+fine FG · %RTP	section		
+fine FG 0-50 %RTP	pct	fine FG 0-50 coins	Wagered (coins)
+fine FG 50-100 %RTP	pct	fine FG 50-100 coins	Wagered (coins)
+fine FG 100-150 %RTP	pct	fine FG 100-150 coins	Wagered (coins)
+fine FG 150-200 %RTP	pct	fine FG 150-200 coins	Wagered (coins)
+fine FG 200-250 %RTP	pct	fine FG 200-250 coins	Wagered (coins)
+fine FG 250-300 %RTP	pct	fine FG 250-300 coins	Wagered (coins)
+fine FG 300-350 %RTP	pct	fine FG 300-350 coins	Wagered (coins)
+fine FG 350-400 %RTP	pct	fine FG 350-400 coins	Wagered (coins)
+fine FG 400-450 %RTP	pct	fine FG 400-450 coins	Wagered (coins)
+fine FG 450-500 %RTP	pct	fine FG 450-500 coins	Wagered (coins)
+fine FG 500-550 %RTP	pct	fine FG 500-550 coins	Wagered (coins)
+fine FG 550-600 %RTP	pct	fine FG 550-600 coins	Wagered (coins)
+fine FG 600-650 %RTP	pct	fine FG 600-650 coins	Wagered (coins)
+fine FG 650-700 %RTP	pct	fine FG 650-700 coins	Wagered (coins)
+fine FG 700-750 %RTP	pct	fine FG 700-750 coins	Wagered (coins)
+fine FG 750-800 %RTP	pct	fine FG 750-800 coins	Wagered (coins)
+fine FG 800-850 %RTP	pct	fine FG 800-850 coins	Wagered (coins)
+fine FG 850-900 %RTP	pct	fine FG 850-900 coins	Wagered (coins)
+fine FG 900-950 %RTP	pct	fine FG 900-950 coins	Wagered (coins)
+fine FG 950-1000 %RTP	pct	fine FG 950-1000 coins	Wagered (coins)
+fine FG 1000-1050 %RTP	pct	fine FG 1000-1050 coins	Wagered (coins)
+fine FG 1050-1100 %RTP	pct	fine FG 1050-1100 coins	Wagered (coins)
+fine FG 1100-1150 %RTP	pct	fine FG 1100-1150 coins	Wagered (coins)
+fine FG 1150-1200 %RTP	pct	fine FG 1150-1200 coins	Wagered (coins)
+fine FG 1200-1250 %RTP	pct	fine FG 1200-1250 coins	Wagered (coins)
+fine FG 1250-1300 %RTP	pct	fine FG 1250-1300 coins	Wagered (coins)
+fine FG 1300-1350 %RTP	pct	fine FG 1300-1350 coins	Wagered (coins)
+fine FG 1350-1400 %RTP	pct	fine FG 1350-1400 coins	Wagered (coins)
+fine FG 1400-1450 %RTP	pct	fine FG 1400-1450 coins	Wagered (coins)
+fine FG 1450-1500 %RTP	pct	fine FG 1450-1500 coins	Wagered (coins)
+fine FG 1500-1550 %RTP	pct	fine FG 1500-1550 coins	Wagered (coins)
+fine FG 1550-1600 %RTP	pct	fine FG 1550-1600 coins	Wagered (coins)
+fine FG 1600-1650 %RTP	pct	fine FG 1600-1650 coins	Wagered (coins)
+fine FG 1650-1700 %RTP	pct	fine FG 1650-1700 coins	Wagered (coins)
+fine FG 1700-1750 %RTP	pct	fine FG 1700-1750 coins	Wagered (coins)
+fine FG 1750-1800 %RTP	pct	fine FG 1750-1800 coins	Wagered (coins)
+fine FG 1800-1850 %RTP	pct	fine FG 1800-1850 coins	Wagered (coins)
+fine FG 1850-1900 %RTP	pct	fine FG 1850-1900 coins	Wagered (coins)
+fine FG 1900-1950 %RTP	pct	fine FG 1900-1950 coins	Wagered (coins)
+fine FG 1950-2000 %RTP	pct	fine FG 1950-2000 coins	Wagered (coins)
+fine FG 2000-2050 %RTP	pct	fine FG 2000-2050 coins	Wagered (coins)
+fine FG 2050-2100 %RTP	pct	fine FG 2050-2100 coins	Wagered (coins)
+fine FG 2100-2150 %RTP	pct	fine FG 2100-2150 coins	Wagered (coins)
+fine FG 2150-2200 %RTP	pct	fine FG 2150-2200 coins	Wagered (coins)
+fine FG 2200-2250 %RTP	pct	fine FG 2200-2250 coins	Wagered (coins)
+fine FG 2250-2300 %RTP	pct	fine FG 2250-2300 coins	Wagered (coins)
+fine FG 2300-2350 %RTP	pct	fine FG 2300-2350 coins	Wagered (coins)
+fine FG 2350-2400 %RTP	pct	fine FG 2350-2400 coins	Wagered (coins)
+fine FG 2400-2450 %RTP	pct	fine FG 2400-2450 coins	Wagered (coins)
+fine FG 2450-2500 %RTP	pct	fine FG 2450-2500 coins	Wagered (coins)
+fine FG 2500-2550 %RTP	pct	fine FG 2500-2550 coins	Wagered (coins)
+fine FG 2550-2600 %RTP	pct	fine FG 2550-2600 coins	Wagered (coins)
+fine FG 2600-2650 %RTP	pct	fine FG 2600-2650 coins	Wagered (coins)
+fine FG 2650-2700 %RTP	pct	fine FG 2650-2700 coins	Wagered (coins)
+fine FG 2700-2750 %RTP	pct	fine FG 2700-2750 coins	Wagered (coins)
+fine FG 2750-2800 %RTP	pct	fine FG 2750-2800 coins	Wagered (coins)
+fine FG 2800-2850 %RTP	pct	fine FG 2800-2850 coins	Wagered (coins)
+fine FG 2850-2900 %RTP	pct	fine FG 2850-2900 coins	Wagered (coins)
+fine FG 2900-2950 %RTP	pct	fine FG 2900-2950 coins	Wagered (coins)
+fine FG 2950-3000 %RTP	pct	fine FG 2950-3000 coins	Wagered (coins)
+fine FG 3000+ %RTP	pct	fine FG 3000+ coins	Wagered (coins)
+— B: combo (символ × эффективная длина) —	section		
+combo BASE · coins	section		
+combo BASE Seven 3of coins	sum		
+combo BASE Seven 4of coins	sum		
+combo BASE Seven 5of coins	sum		
+combo BASE Seven 6of coins	sum		
+combo BASE Seven 7of coins	sum		
+combo BASE Seven 8of coins	sum		
+combo BASE Seven 9of coins	sum		
+combo BASE Seven 10of coins	sum		
+combo BASE Seven 11of coins	sum		
+combo BASE Seven 12of coins	sum		
+combo BASE Seven 13of coins	sum		
+combo BASE Seven 14of coins	sum		
+combo BASE Seven 15of coins	sum		
+combo BASE BAR 3of coins	sum		
+combo BASE BAR 4of coins	sum		
+combo BASE BAR 5of coins	sum		
+combo BASE BAR 6of coins	sum		
+combo BASE BAR 7of coins	sum		
+combo BASE BAR 8of coins	sum		
+combo BASE BAR 9of coins	sum		
+combo BASE BAR 10of coins	sum		
+combo BASE Cherry 3of coins	sum		
+combo BASE Cherry 4of coins	sum		
+combo BASE Cherry 5of coins	sum		
+combo BASE Cherry 6of coins	sum		
+combo BASE Cherry 7of coins	sum		
+combo BASE Cherry 8of coins	sum		
+combo BASE Cherry 9of coins	sum		
+combo BASE Cherry 10of coins	sum		
+combo BASE Orange 3of coins	sum		
+combo BASE Orange 4of coins	sum		
+combo BASE Orange 5of coins	sum		
+combo BASE Orange 6of coins	sum		
+combo BASE Orange 7of coins	sum		
+combo BASE Orange 8of coins	sum		
+combo BASE Orange 9of coins	sum		
+combo BASE Orange 10of coins	sum		
+combo BASE Watermelon 3of coins	sum		
+combo BASE Watermelon 4of coins	sum		
+combo BASE Watermelon 5of coins	sum		
+combo BASE Watermelon 6of coins	sum		
+combo BASE Watermelon 7of coins	sum		
+combo BASE Watermelon 8of coins	sum		
+combo BASE Watermelon 9of coins	sum		
+combo BASE Watermelon 10of coins	sum		
+combo BASE · %RTP	section		
+combo BASE Seven 3of %RTP	pct	combo BASE Seven 3of coins	Wagered (coins)
+combo BASE Seven 4of %RTP	pct	combo BASE Seven 4of coins	Wagered (coins)
+combo BASE Seven 5of %RTP	pct	combo BASE Seven 5of coins	Wagered (coins)
+combo BASE Seven 6of %RTP	pct	combo BASE Seven 6of coins	Wagered (coins)
+combo BASE Seven 7of %RTP	pct	combo BASE Seven 7of coins	Wagered (coins)
+combo BASE Seven 8of %RTP	pct	combo BASE Seven 8of coins	Wagered (coins)
+combo BASE Seven 9of %RTP	pct	combo BASE Seven 9of coins	Wagered (coins)
+combo BASE Seven 10of %RTP	pct	combo BASE Seven 10of coins	Wagered (coins)
+combo BASE Seven 11of %RTP	pct	combo BASE Seven 11of coins	Wagered (coins)
+combo BASE Seven 12of %RTP	pct	combo BASE Seven 12of coins	Wagered (coins)
+combo BASE Seven 13of %RTP	pct	combo BASE Seven 13of coins	Wagered (coins)
+combo BASE Seven 14of %RTP	pct	combo BASE Seven 14of coins	Wagered (coins)
+combo BASE Seven 15of %RTP	pct	combo BASE Seven 15of coins	Wagered (coins)
+combo BASE BAR 3of %RTP	pct	combo BASE BAR 3of coins	Wagered (coins)
+combo BASE BAR 4of %RTP	pct	combo BASE BAR 4of coins	Wagered (coins)
+combo BASE BAR 5of %RTP	pct	combo BASE BAR 5of coins	Wagered (coins)
+combo BASE BAR 6of %RTP	pct	combo BASE BAR 6of coins	Wagered (coins)
+combo BASE BAR 7of %RTP	pct	combo BASE BAR 7of coins	Wagered (coins)
+combo BASE BAR 8of %RTP	pct	combo BASE BAR 8of coins	Wagered (coins)
+combo BASE BAR 9of %RTP	pct	combo BASE BAR 9of coins	Wagered (coins)
+combo BASE BAR 10of %RTP	pct	combo BASE BAR 10of coins	Wagered (coins)
+combo BASE Cherry 3of %RTP	pct	combo BASE Cherry 3of coins	Wagered (coins)
+combo BASE Cherry 4of %RTP	pct	combo BASE Cherry 4of coins	Wagered (coins)
+combo BASE Cherry 5of %RTP	pct	combo BASE Cherry 5of coins	Wagered (coins)
+combo BASE Cherry 6of %RTP	pct	combo BASE Cherry 6of coins	Wagered (coins)
+combo BASE Cherry 7of %RTP	pct	combo BASE Cherry 7of coins	Wagered (coins)
+combo BASE Cherry 8of %RTP	pct	combo BASE Cherry 8of coins	Wagered (coins)
+combo BASE Cherry 9of %RTP	pct	combo BASE Cherry 9of coins	Wagered (coins)
+combo BASE Cherry 10of %RTP	pct	combo BASE Cherry 10of coins	Wagered (coins)
+combo BASE Orange 3of %RTP	pct	combo BASE Orange 3of coins	Wagered (coins)
+combo BASE Orange 4of %RTP	pct	combo BASE Orange 4of coins	Wagered (coins)
+combo BASE Orange 5of %RTP	pct	combo BASE Orange 5of coins	Wagered (coins)
+combo BASE Orange 6of %RTP	pct	combo BASE Orange 6of coins	Wagered (coins)
+combo BASE Orange 7of %RTP	pct	combo BASE Orange 7of coins	Wagered (coins)
+combo BASE Orange 8of %RTP	pct	combo BASE Orange 8of coins	Wagered (coins)
+combo BASE Orange 9of %RTP	pct	combo BASE Orange 9of coins	Wagered (coins)
+combo BASE Orange 10of %RTP	pct	combo BASE Orange 10of coins	Wagered (coins)
+combo BASE Watermelon 3of %RTP	pct	combo BASE Watermelon 3of coins	Wagered (coins)
+combo BASE Watermelon 4of %RTP	pct	combo BASE Watermelon 4of coins	Wagered (coins)
+combo BASE Watermelon 5of %RTP	pct	combo BASE Watermelon 5of coins	Wagered (coins)
+combo BASE Watermelon 6of %RTP	pct	combo BASE Watermelon 6of coins	Wagered (coins)
+combo BASE Watermelon 7of %RTP	pct	combo BASE Watermelon 7of coins	Wagered (coins)
+combo BASE Watermelon 8of %RTP	pct	combo BASE Watermelon 8of coins	Wagered (coins)
+combo BASE Watermelon 9of %RTP	pct	combo BASE Watermelon 9of coins	Wagered (coins)
+combo BASE Watermelon 10of %RTP	pct	combo BASE Watermelon 10of coins	Wagered (coins)
+combo FG · coins	section		
+combo FG Seven 3of coins	sum		
+combo FG Seven 4of coins	sum		
+combo FG Seven 5of coins	sum		
+combo FG Seven 6of coins	sum		
+combo FG Seven 7of coins	sum		
+combo FG Seven 8of coins	sum		
+combo FG Seven 9of coins	sum		
+combo FG Seven 10of coins	sum		
+combo FG Seven 11of coins	sum		
+combo FG Seven 12of coins	sum		
+combo FG Seven 13of coins	sum		
+combo FG Seven 14of coins	sum		
+combo FG Seven 15of coins	sum		
+combo FG BAR 3of coins	sum		
+combo FG BAR 4of coins	sum		
+combo FG BAR 5of coins	sum		
+combo FG BAR 6of coins	sum		
+combo FG BAR 7of coins	sum		
+combo FG BAR 8of coins	sum		
+combo FG BAR 9of coins	sum		
+combo FG BAR 10of coins	sum		
+combo FG Cherry 3of coins	sum		
+combo FG Cherry 4of coins	sum		
+combo FG Cherry 5of coins	sum		
+combo FG Cherry 6of coins	sum		
+combo FG Cherry 7of coins	sum		
+combo FG Cherry 8of coins	sum		
+combo FG Cherry 9of coins	sum		
+combo FG Cherry 10of coins	sum		
+combo FG Orange 3of coins	sum		
+combo FG Orange 4of coins	sum		
+combo FG Orange 5of coins	sum		
+combo FG Orange 6of coins	sum		
+combo FG Orange 7of coins	sum		
+combo FG Orange 8of coins	sum		
+combo FG Orange 9of coins	sum		
+combo FG Orange 10of coins	sum		
+combo FG Watermelon 3of coins	sum		
+combo FG Watermelon 4of coins	sum		
+combo FG Watermelon 5of coins	sum		
+combo FG Watermelon 6of coins	sum		
+combo FG Watermelon 7of coins	sum		
+combo FG Watermelon 8of coins	sum		
+combo FG Watermelon 9of coins	sum		
+combo FG Watermelon 10of coins	sum		
+combo FG · %RTP	section		
+combo FG Seven 3of %RTP	pct	combo FG Seven 3of coins	Wagered (coins)
+combo FG Seven 4of %RTP	pct	combo FG Seven 4of coins	Wagered (coins)
+combo FG Seven 5of %RTP	pct	combo FG Seven 5of coins	Wagered (coins)
+combo FG Seven 6of %RTP	pct	combo FG Seven 6of coins	Wagered (coins)
+combo FG Seven 7of %RTP	pct	combo FG Seven 7of coins	Wagered (coins)
+combo FG Seven 8of %RTP	pct	combo FG Seven 8of coins	Wagered (coins)
+combo FG Seven 9of %RTP	pct	combo FG Seven 9of coins	Wagered (coins)
+combo FG Seven 10of %RTP	pct	combo FG Seven 10of coins	Wagered (coins)
+combo FG Seven 11of %RTP	pct	combo FG Seven 11of coins	Wagered (coins)
+combo FG Seven 12of %RTP	pct	combo FG Seven 12of coins	Wagered (coins)
+combo FG Seven 13of %RTP	pct	combo FG Seven 13of coins	Wagered (coins)
+combo FG Seven 14of %RTP	pct	combo FG Seven 14of coins	Wagered (coins)
+combo FG Seven 15of %RTP	pct	combo FG Seven 15of coins	Wagered (coins)
+combo FG BAR 3of %RTP	pct	combo FG BAR 3of coins	Wagered (coins)
+combo FG BAR 4of %RTP	pct	combo FG BAR 4of coins	Wagered (coins)
+combo FG BAR 5of %RTP	pct	combo FG BAR 5of coins	Wagered (coins)
+combo FG BAR 6of %RTP	pct	combo FG BAR 6of coins	Wagered (coins)
+combo FG BAR 7of %RTP	pct	combo FG BAR 7of coins	Wagered (coins)
+combo FG BAR 8of %RTP	pct	combo FG BAR 8of coins	Wagered (coins)
+combo FG BAR 9of %RTP	pct	combo FG BAR 9of coins	Wagered (coins)
+combo FG BAR 10of %RTP	pct	combo FG BAR 10of coins	Wagered (coins)
+combo FG Cherry 3of %RTP	pct	combo FG Cherry 3of coins	Wagered (coins)
+combo FG Cherry 4of %RTP	pct	combo FG Cherry 4of coins	Wagered (coins)
+combo FG Cherry 5of %RTP	pct	combo FG Cherry 5of coins	Wagered (coins)
+combo FG Cherry 6of %RTP	pct	combo FG Cherry 6of coins	Wagered (coins)
+combo FG Cherry 7of %RTP	pct	combo FG Cherry 7of coins	Wagered (coins)
+combo FG Cherry 8of %RTP	pct	combo FG Cherry 8of coins	Wagered (coins)
+combo FG Cherry 9of %RTP	pct	combo FG Cherry 9of coins	Wagered (coins)
+combo FG Cherry 10of %RTP	pct	combo FG Cherry 10of coins	Wagered (coins)
+combo FG Orange 3of %RTP	pct	combo FG Orange 3of coins	Wagered (coins)
+combo FG Orange 4of %RTP	pct	combo FG Orange 4of coins	Wagered (coins)
+combo FG Orange 5of %RTP	pct	combo FG Orange 5of coins	Wagered (coins)
+combo FG Orange 6of %RTP	pct	combo FG Orange 6of coins	Wagered (coins)
+combo FG Orange 7of %RTP	pct	combo FG Orange 7of coins	Wagered (coins)
+combo FG Orange 8of %RTP	pct	combo FG Orange 8of coins	Wagered (coins)
+combo FG Orange 9of %RTP	pct	combo FG Orange 9of coins	Wagered (coins)
+combo FG Orange 10of %RTP	pct	combo FG Orange 10of coins	Wagered (coins)
+combo FG Watermelon 3of %RTP	pct	combo FG Watermelon 3of coins	Wagered (coins)
+combo FG Watermelon 4of %RTP	pct	combo FG Watermelon 4of coins	Wagered (coins)
+combo FG Watermelon 5of %RTP	pct	combo FG Watermelon 5of coins	Wagered (coins)
+combo FG Watermelon 6of %RTP	pct	combo FG Watermelon 6of coins	Wagered (coins)
+combo FG Watermelon 7of %RTP	pct	combo FG Watermelon 7of coins	Wagered (coins)
+combo FG Watermelon 8of %RTP	pct	combo FG Watermelon 8of coins	Wagered (coins)
+combo FG Watermelon 9of %RTP	pct	combo FG Watermelon 9of coins	Wagered (coins)
+combo FG Watermelon 10of %RTP	pct	combo FG Watermelon 10of coins	Wagered (coins)
